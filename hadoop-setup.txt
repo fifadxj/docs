@@ -1,14 +1,21 @@
+#222.73.243.31 (10.240.29.11)
+#222.73.243.32 (10.240.29.12)
+#222.73.243.33 (10.240.29.13)
+#222.73.243.34 (10.240.29.14)
+#222.73.56.250 (10.240.29.15)
+
 vi /etc/resolv.conf
 nameserver 114.114.114.114
 nameserver 8.8.8.8
 
 vi /etc/hosts #set hostname
-10.240.29.11     centos-master
+10.240.29.11    centos-master
 10.240.29.12    centos-slave1
 10.240.29.13    centos-slave2
 10.240.29.14    centos-slave3
 
 useradd hadoop
+passwd hadoop
 visudo
 hadoop  ALL=(ALL)       NOPASSWD: ALL
 
