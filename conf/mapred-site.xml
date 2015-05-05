@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+	<property>
+	    <!--<name>mapred.job.tracker</name>-->
+		<name>mapreduce.jobtracker.address</name>
+		<value>10.240.29.12:8021</value>
+		<final>true</final>
+	</property>
+	<property>
+		<!--<name>mapred.local.dir</name>-->
+		<name>mapreduce.cluster.local.dir</name>
+		<value>/home/hadoop/hdfs/data</value>
+		<final>true</final>
+	</property>
+	<property>
+		<!--<name>mapred.system.dir</name>-->
+		<name>mapreduce.jobtracker.system.dir</name>
+		<value>/home/hadoop/hdfs/data</value>
+		<final>true</final>
+	</property>
+</configuration>
