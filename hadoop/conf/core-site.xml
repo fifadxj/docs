@@ -3,6 +3,7 @@
 
 <configuration>
 	<property>
+		<!--<name>fs.default.name</name>-->
 		<name>fs.defaultFS</name>
 		<value>hdfs://0.0.0.0</value>
 		<final>true</final>
