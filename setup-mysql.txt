@@ -3,7 +3,7 @@ https://help.ubuntu.com/lts/serverguide/mysql.html
 
 1. install mysql
 apt-get install mysql-server
-./mysql --socket /tmp/mysql.sock
+#./mysql --socket /tmp/mysql.sock
 
 2. check mysql listening port
 netstat -tl | grep mysql
@@ -13,6 +13,8 @@ netstat -tan | grep 3306
 3. grant access to root
 mysql -uroot -p
 GRANT ALL ON *.* To 'root'@'%';
+SET PASSWORD FOR 'root'@'%' = PASSWORD('******');
+select user, host, password from mysql.user
 
 4. set charset
 SET NAMES 'utf8';
