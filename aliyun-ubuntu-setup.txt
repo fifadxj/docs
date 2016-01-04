@@ -1,0 +1,36 @@
+#先查看一下当前挂载的磁盘，应该只有/dev/xvda挂载到/
+df -h
+
+#查看可用磁盘
+fdisk -l
+
+#查看数据盘
+fdisk /dev/xvdb
+
+#分区
+依次输入n,p,1,两次回车，wq保存
+
+#格式化磁盘
+mkfs -t ext3 /dev/xvdb1
+
+#创建挂载点目录
+mkdir /data
+
+#设置数据盘到挂载点/data
+vi /etc/fstab
+#<file system> <mount point> <type> <options> <dump> <pass>
+/dev/xvdb1     /data         ext3   defaults  0      0
+
+#挂载fstab中的挂载点
+mount -a
+
+#查看当前挂载的磁盘，应该新增了/dev/xvdb
+df -h
+
+#安装jdk
+apt-get install default-jdk
+
+#设置java环境变量
+vi /etc/profile
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export PATH=$PATH:/usr/lib/jvm/java-7-openjdk-amd64/bin
