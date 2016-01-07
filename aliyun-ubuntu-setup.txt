@@ -27,6 +27,12 @@ mount -a
 #查看当前挂载的磁盘，应该新增了/dev/xvdb
 df -h
 
+#更新apt-get
+apt-get update && apt-get upgrade -y
+
+#安装fail2ban
+apt-get install fail2ban
+
 #安装jdk
 apt-get install default-jdk
 
