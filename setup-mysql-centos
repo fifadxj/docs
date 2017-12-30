@@ -1,0 +1,32 @@
+#参考
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-centos-7
+https://dev.mysql.com/doc/refman/5.5/en/default-privileges.html
+
+#下载安装包
+https://dev.mysql.com/downloads/repo/yum/, 下载mysql57-community-release-el7-9.noarch.rpm
+
+#安装
+rpm install mysql57-community-release-el7-9.noarch.rpm
+yum install mysql-server
+
+#启动
+systemctl start mysqld
+
+#检查
+systemctl status mysqld
+
+#获取root临时密码
+grep 'temporary password' /var/log/mysqld.log
+
+#修改root密码
+mysql -uroot -p
+SET PASSWORD = PASSWORD('xxxxxx');
+mysql -uroot -pxxxxxx
+
+#允许root远程访问
+select user, host,authentication_string  from  mysql.user;
+update mysql.user set host='%' where user='root';
+select user, host,authentication_string  from  mysql.user;
+
+
+
