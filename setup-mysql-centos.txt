@@ -28,5 +28,7 @@ select user, host,authentication_string  from  mysql.user;
 update mysql.user set host='%' where user='root';
 select user, host,authentication_string  from  mysql.user;
 
+#重启
+systemctl restart mysqld
 
 
