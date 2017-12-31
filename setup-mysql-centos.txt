@@ -39,4 +39,7 @@ character-set-server = utf8
 #重启
 systemctl restart mysqld
 
+#检查charset
+show variables like 'char%';
+show variables like 'collation%';
 
