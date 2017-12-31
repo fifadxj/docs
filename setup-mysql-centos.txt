@@ -28,6 +28,10 @@ select user, host,authentication_string  from  mysql.user;
 update mysql.user set host='%' where user='root';
 select user, host,authentication_string  from  mysql.user;
 
+#设置表名大小写不敏感
+vi /etc/my.cnf
+lower_case_table_names=1
+
 #重启
 systemctl restart mysqld
 
