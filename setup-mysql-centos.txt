@@ -32,6 +32,10 @@ select user, host,authentication_string  from  mysql.user;
 vi /etc/my.cnf
 lower_case_table_names=1
 
+#设置charset
+vi /etc/my.cnf
+character-set-server = utf8
+
 #重启
 systemctl restart mysqld
 
