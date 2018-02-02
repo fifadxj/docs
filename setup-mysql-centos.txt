@@ -6,7 +6,7 @@ https://dev.mysql.com/doc/refman/5.5/en/default-privileges.html
 https://dev.mysql.com/downloads/repo/yum/, 下载mysql57-community-release-el7-9.noarch.rpm
 
 #安装
-rpm install mysql57-community-release-el7-9.noarch.rpm
+rpm -ivh mysql57-community-release-el7-9.noarch.rpm
 yum install mysql-server
 
 #启动
